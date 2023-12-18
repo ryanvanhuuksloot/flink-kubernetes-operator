@@ -569,5 +569,6 @@ public class ReconciliationUtils {
 
         reconciliationStatus.setLastReconciledSpec(
                 SpecUtils.writeSpecWithMeta(lastSpecWithMeta.getSpec(), newMeta));
+        resource.getStatus().setObservedGeneration(resource.getMetadata().getGeneration());
     }
 }

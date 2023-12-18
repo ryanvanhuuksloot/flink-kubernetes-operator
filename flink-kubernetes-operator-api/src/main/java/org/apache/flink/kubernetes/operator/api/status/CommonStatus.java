@@ -39,6 +39,9 @@ import org.apache.commons.lang3.StringUtils;
 @SuperBuilder
 public abstract class CommonStatus<SPEC extends AbstractFlinkSpec> {
 
+    /** Observed Generation of the current Reconciled FlinkDeployment/FlinkSessionJob. */
+    private Long observedGeneration = 0L;
+
     /** Last observed status of the Flink job on Application/Session cluster. */
     private JobStatus jobStatus = new JobStatus();
 
